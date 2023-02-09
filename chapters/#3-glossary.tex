@@ -1,0 +1,30 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Glossary
+% https://de.overleaf.com/learn/latex/Glossaries
+% Commands:
+% \gls{ ... name ... } => name
+% \Gls{ ... name ... } => name, with uppercase first letter
+% \glspl{ ... name ... } => name, with s at the end for plural
+% \Glspl{ ... name ... } => name, with uppercase first letter and s for plural
+%
+% If there is need for additional grammatical forms use this:
+% https://tex.stackexchange.com/questions/178725/how-to-use-glossaries-for-different-grammatical-acronym-forms
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeglossaries
+
+\newglossaryentry{latex}
+{
+    name = LaTeX,
+    description = {
+        Is a markup language specially suited for scientific documents.%
+    }
+}
+
+\newglossaryentry{busbahnhof}
+{
+    name = Busbahnhof,
+    plural = Busbahnhöfe,
+    description = {Da wo Busse stehen.}
+}
+
+\glsclearpage

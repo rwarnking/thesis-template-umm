@@ -9,11 +9,26 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Default packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{ifthen}
 
 \usepackage[utf8]{inputenc}
 
 % Links
 \RequirePackage{hyperref}
+
+% For glossary and acronyms
+% https://de.overleaf.com/learn/latex/Glossaries
+% https://tex.stackexchange.com/questions/383285/flush-page-number-at-right-in-glossary
+% https://www.dickimaw-books.com/gallery/glossaries-styles/
+% TODO acronym list is not styled
+\RequirePackage[translate=babel, acronym, toc, nopostdot, style=super3colheader]{glossaries}
+% https://tex.stackexchange.com/questions/154554/renaming-acronyms-glossaries-package
+\renewcommand*{\acronymname}{Abkürzungsverzeichnis}
+% Have seperate pages for glossary and acronym list
+\renewcommand*{\glsclearpage}{\clearpage}
+
+% For appendix
+\RequirePackage{appendix}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Meta information commands
@@ -37,6 +52,5 @@
 
 % Adjust page numbering
 \newcommand{\startTextChapters}{
-  \cleardoublepage
   \pagenumbering{arabic}
 }

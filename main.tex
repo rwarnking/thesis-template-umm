@@ -6,6 +6,11 @@
 \input{common/packages}
 \input{common/setup}
 
+\input{chapters/#2-acronyms}
+\input{chapters/#3-glossary}
+
+\makeindex
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Meta-data
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -38,6 +43,15 @@
 
 \startTextChapters
 
+\printglossaries
+\clearpage
+
 \input{chapters/01-chapter}
+
+\input{chapters/xx-appendix}
+
+\input{chapters/xy-cv}
+
+\input{chapters/xz-acknowledgement}
 
 \end{document}
