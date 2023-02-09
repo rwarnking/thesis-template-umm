@@ -69,6 +69,9 @@
     % bibstyle=numeric,
     % sorting=none,
 ]{biblatex}
+% Add quote command
+% https://www.namsu.de/Extra/pakete/Csquotes.html
+\RequirePackage{csquotes}
 
 % For glossary and acronyms
 % https://de.overleaf.com/learn/latex/Glossaries
@@ -87,6 +90,18 @@
 
 % For appendix
 \RequirePackage{appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Page design
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fancy header and footer
+\RequirePackage{fancyhdr}
+% Shift page number to the right of the header
+\setlength{\headheight}{15pt}
+\lhead{\leftmark} \chead{} \rhead{}
+% Add title to the footer
+\cfoot{} \rfoot[\leftmark]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Meta information commands
@@ -110,5 +125,6 @@
 
 % Adjust page numbering
 \newcommand{\startTextChapters}{
+  \pagestyle{fancy}
   \pagenumbering{arabic}
 }

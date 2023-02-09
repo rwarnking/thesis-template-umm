@@ -1,6 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Design settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Page margins
+\usepackage[left=2.5cm, right=2.5cm, top=2cm, bottom=2cm]{geometry}
 
 % ----------------------------------------
 % Text design
@@ -12,6 +14,14 @@
 % Sets margin between lines
 % \onehalfspacing
 % \linespread{1.5}
+
+% ----------------------------------------
+% Setup title design
+% ----------------------------------------
+\usepackage{titlesec}
+
+% Remove number in header title 
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}} 
 
 % ----------------------------------------
 % Hyperref setup
