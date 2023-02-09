@@ -1,10 +1,31 @@
+% Options:
+% For bibstyle selection: [bibstyle=numeric] or similar
+% For class selection: [doctype=report] or similar
 \ProvidesClass{thesis}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Load default
+% Load default class and biblatex style
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% https://tex.stackexchange.com/questions/250159/
+\RequirePackage{xkeyval}%
+% Set default to article
+\def\doctype{article}%
+% Check doctype key for other class input
+\define@key{thesis.cls}{doctype}[article]{%
+    \def\doctype{#1}%
+}
 
-\LoadClass[12pt, a4paper]{article}
+% Set default to alphabetic
+\def\bibstyle{alphabetic}%
+% Check bibstyle key for other style input
+\define@key{thesis.cls}{bibstyle}[alphabetic]{%
+    \def\bibstyle{#1}%
+}
+
+\ExecuteOptionsX{doctype, bibstyle}
+\ProcessOptionsX
+
+\LoadClass[12pt, a4paper]{\doctype}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Default packages
@@ -15,6 +36,19 @@
 
 % Links
 \RequirePackage{hyperref}
+
+% ----------------------------------------
+% Bibleography, appendix, ...
+% ----------------------------------------
+% https://de.overleaf.com/learn/latex/Biblatex_bibliography_styles
+\RequirePackage[
+    backend=biber,
+    bibstyle=authortitle,
+    citestyle=verbose,
+    % style=\bibstyle,
+    % bibstyle=numeric,
+    % sorting=none,
+]{biblatex}
 
 % For glossary and acronyms
 % https://de.overleaf.com/learn/latex/Glossaries

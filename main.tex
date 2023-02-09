@@ -11,6 +11,8 @@
 
 \makeindex
 
+\addbibresource{papers.bib}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Meta-data
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -56,6 +58,12 @@
 \clearpage
 \input{chapters/05-summary}
 \clearpage
+
+\cleardoublepage
+% unnumbered in table of contents
+% \printbibliography[heading=bibintoc]
+% numbered in table of contents
+\printbibliography[heading=bibnumbered]
 
 \input{chapters/xx-appendix}
 \clearpage

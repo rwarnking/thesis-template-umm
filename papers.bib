@@ -1,0 +1,98 @@
+% Bibleography
+% Entry types and their fields:
+% http://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf
+% Cite a web page
+% https://tex.stackexchange.com/questions/3587/how-can-i-use-bibtex-to-cite-a-web-page
+% Footcite
+% https://tex.stackexchange.com/questions/242110/how-to-simply-footcite-with-biblatex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Material from journals, magazines & newspapers:
+% @article, @periodical, @suppperiodical
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@article{art:hollings2017early,
+  title        = {The early mathematical education of Ada Lovelace},
+  author       = {Hollings, Christopher and Martin, Ursula and Rice, Adrian},
+  journal      = {BSHM Bulletin: Journal of the British Society for the History of Mathematics},
+  volume       = {32},
+  number       = {3},
+  pages        = {221--234},
+  date         = {2017},
+  publisher    = {Taylor \& Francis}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Material from single-authored or co-authored books:
+% @inbook, @suppbook, @bookinbook, @book, @mvbook
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@inbook{inb:name,
+  title        = {The title of the work},
+  author       = {Peter Eston}, 
+  chapter      = {8},
+  pages        = {201-213},
+  publisher    = {The name of the publisher},
+  date         = {1993-07},
+  volume       = {4},
+  series       = {5},
+  address      = {The address of the publisher},
+  edition      = {3},
+  language     = {Deutsch}
+}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Material from edited anthologies:
+% @incollection, @suppcollection, @collection, @mvcollection
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@incollection{incol:name,
+  title        = {Title},
+  author       = {Lastname, Surname},
+  booktitle    = {Booktitle},
+  pages        = {329--343},
+  pagetotal    = {400},
+  year         = {2017},
+  publisher    = {Springer},
+  isbn         = {...}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Material from conference proceedings:
+% @inproceedings, @proceedings, @mvproceedings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@proceedings{pro:name,
+  title        = {The title of the work},
+  editor       = {Peter Kidwelly},
+  publisher    = {The name of the publisher},
+  date         = {1993-07},
+  volume       = {4},
+  series       = {5},
+  address      = {The address of the publisher},
+  organization = {The organization}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Material from technical & institutional publications:
+% @manual, @report, @patent, @thesis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@thesis{th:name,
+  author       = {Peter Joslin}, 
+  title        = {The title of the work},
+  school       = {The school of the thesis},
+  date         = {1993-07},
+  address      = {The address of the publisher}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Material from online, informal & other sources:
+% @online, @booklet, @unpublished, @misc
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% checked
+@online{onl:name,
+  author       = {Author},
+  organization = {Organization},
+  title        = {Title},
+  url          = "https://www.google.com/",
+  language     = {Deutsch},
+  location     = {},
+  urldate      = {2022-02-09},
+}
