@@ -1,4 +1,5 @@
 % Options:
+% Languages: [german] or [english]
 % For bibstyle selection: [bibstyle=numeric] or similar
 % For class selection: [doctype=report] or similar
 \ProvidesClass{thesis}
@@ -28,9 +29,28 @@
 \LoadClass[12pt, a4paper]{\doctype}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Setup class options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{sprache}
+\DeclareOption{german}{
+    \setcounter{sprache}{1}
+}
+\DeclareOption{english}{
+    \setcounter{sprache}{2}
+}
+
+\ProcessOptions
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Default packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{ifthen}
+\ifthenelse{\value{sprache} = 1}{
+    \RequirePackage[ngerman]{babel}
+    \RequirePackage[T1]{fontenc}
+}{
+    \RequirePackage[english]{babel}
+}
 
 \usepackage[utf8]{inputenc}
 
@@ -56,10 +76,14 @@
 % https://www.dickimaw-books.com/gallery/glossaries-styles/
 % TODO acronym list is not styled
 \RequirePackage[translate=babel, acronym, toc, nopostdot, style=super3colheader]{glossaries}
-% https://tex.stackexchange.com/questions/154554/renaming-acronyms-glossaries-package
-\renewcommand*{\acronymname}{Abkürzungsverzeichnis}
+\ifthenelse{\value{sprache} = 1}{
+    % https://tex.stackexchange.com/questions/154554/renaming-acronyms-glossaries-package
+    \renewcommand*{\acronymname}{Abkürzungsverzeichnis}
+}{}
 % Have seperate pages for glossary and acronym list
-\renewcommand*{\glsclearpage}{\clearpage}
+\ifthenelse{\equal{\doctype}{article}}{
+    \renewcommand*{\glsclearpage}{\clearpage}
+}{}
 
 % For appendix
 \RequirePackage{appendix}
