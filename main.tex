@@ -2,13 +2,34 @@
 
 \usepackage{lipsum}
 
-\title{thesis-template-um}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Meta-data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Maintitle}
+\subtitle{Subtitle}
 \author{Author}
-\date{date}
+\email{Email}
+
+% Default Bachelorarbeit / Bachelors's Thesis
+\type{Arbeit}
+% Default: current month & year
+\submitdate{22. Februar 2022}
+% No default
+\signcity{City}
+
+% Institute information
+\institute{Institute}
+\titleinfoA{Informationline 1}
+\titleinfoB{Informationline 2}
+\firstSupervisor{first Supervisor}
+%\secondSupervisor{second Supervisor}
 
 \begin{document}
 
-\maketitle
+\input{chapters/#1-titlepage}
+\cleardoublepage
+
+\startTextChapters
 
 \section{Introduction}
 

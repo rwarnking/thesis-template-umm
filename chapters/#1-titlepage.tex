@@ -1,0 +1,36 @@
+% Hot to use title author and date on a custom title page
+% https://tex.stackexchange.com/questions/10130/
+\makeatletter
+
+\begin{titlepage}
+
+    \pagenumbering{roman}
+    \pagestyle{plain}
+    \thispagestyle{empty}
+    \begin{center}
+        
+        \LARGE{\textsc{
+            \@institute \vspace{0.5cm}\\
+            \@titleinfoA \vspace{0.5cm}\\
+            \@titleinfoB
+        }}
+        \vfill
+        
+        \huge{\textbf{\@title}}
+        \vspace{4mm}
+        
+        \normalsize{\textbf{\@subtitle}}
+        \vspace{8mm}
+    \end{center}
+    %
+    \vfill%
+    %
+    Vorgelegt von:\\
+    \@author\\
+    am \@submitdate\\
+    \@firstSupervisor
+    
+    \vfill%
+
+\end{titlepage}
+\makeatother
