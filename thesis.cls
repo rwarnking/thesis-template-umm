@@ -98,10 +98,15 @@
 \RequirePackage{fancyhdr}
 % Shift page number to the right of the header
 \setlength{\headheight}{15pt}
+% \renewcommand{\secitonmark}[1]{\markboth{#1}{}}
 \lhead{\leftmark} \chead{} \rhead{}
 % Add title to the footer
 \cfoot{} \rfoot[\leftmark]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
+% \renewcommand{\footrulewidth}{0.4pt}
+
+% Allows to have multiline table cells
+\RequirePackage{makecell}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Meta information commands
