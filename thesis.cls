@@ -2,6 +2,7 @@
 % Languages: [german] or [english]
 % For bibstyle selection: [bibstyle=numeric] or similar
 % For class selection: [doctype=report] or similar
+% Font: [arial] or [roman]
 \ProvidesClass{thesis}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -39,6 +40,14 @@
     \setcounter{sprache}{2}
 }
 
+\newcounter{font}
+\DeclareOption{roman}{
+    \setcounter{font}{1}
+}
+\DeclareOption{arial}{
+    \setcounter{font}{2}
+}
+
 \ProcessOptions
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -51,6 +60,19 @@
 }{
     \RequirePackage[english]{babel}
 }
+
+% ----------------------------------------
+% Select the font
+% ----------------------------------------
+% For times new roman
+\ifthenelse{\value{font} = 1}{
+    \RequirePackage{mathptmx}
+}{}
+% For arial
+\ifthenelse{\value{font} = 2}{
+    \renewcommand*{\familydefault}{\sfdefault}
+    \usepackage[scaled]{helvet}
+}{}
 
 \usepackage[utf8]{inputenc}
 
@@ -89,7 +111,7 @@
 }{}
 
 % For appendix
-\RequirePackage{appendix}
+\RequirePackage[page, toc]{appendix}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Page design
@@ -113,6 +135,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\subtitle#1{\gdef\@subtitle{#1}}
 \def\email#1{\gdef\@email{#1}}
+\def\birthplace#1{\gdef\@birthplace{#1}}
 
 \def\type#1{\gdef\@type{#1}}
 \def\submitdate#1{\gdef\@submitdate{#1}}
@@ -127,6 +150,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Create style commands
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Add empty pages such that capter start on the same page
+% Removes header and footer from empty pages
+\def\cleardoublepage{
+    \clearpage\if@twoside \ifodd\c@page\else
+    \hbox{}
+    \thispagestyle{empty}
+    \newpage
+    \if@twocolumn\hbox{}\newpage\fi\fi\fi
+}
 
 % Adjust page numbering
 \newcommand{\startTextChapters}{
