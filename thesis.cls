@@ -125,6 +125,8 @@
 
 % Allows to have multiline table cells
 \RequirePackage{makecell}
+% Allows to stretch table to textwidth
+\RequirePackage{tabularx}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Meta information commands
