@@ -65,6 +65,8 @@
 % Select the font
 % ----------------------------------------
 % For times new roman
+% TODO might be obsolete
+% https://ctan.org/pkg/mathptmx
 \ifthenelse{\value{font} = 1}{
     \RequirePackage{mathptmx}
 }{}
