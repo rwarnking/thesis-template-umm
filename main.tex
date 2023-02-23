@@ -45,35 +45,39 @@
 \pagestyle{plain}%
 
 \input{chapters/#1-titlepage}
-\cleardoublepage
+\cleardoublepage{}
 
 \tableofcontents
-\cleardoublepage
+\cleardoublepage{}
 
-\startTextChapters
+% \startTextChapters{}
+
+\pagestyle{fancy}
+\pagenumbering{arabic}
+
 \printglossaries
-\cleardoublepage
+\cleardoublepage{}
 \input{chapters/01-intro}
-\cleardoublepage
+\cleardoublepage{}
 \input{chapters/02-chapter2}
-\cleardoublepage
+\cleardoublepage{}
 \input{chapters/03-results}
-\cleardoublepage
+\cleardoublepage{}
 \input{chapters/04-discussion}
-\cleardoublepage
+\cleardoublepage{}
 \input{chapters/05-summary}
-\cleardoublepage
+\cleardoublepage{}
 
 % unnumbered in table of contents
 % \printbibliography[heading=bibintoc]
 % numbered in table of contents
 \printbibliography[heading=bibnumbered]
-\cleardoublepage
+\cleardoublepage{}
 \input{chapters/xx-appendix}
-\cleardoublepage
+\cleardoublepage{}
 \input{chapters/xy-cv}
-\cleardoublepage
+\cleardoublepage{}
 \input{chapters/xz-acknowledgement}
-\cleardoublepage
+\cleardoublepage{}
 
 \end{document}
