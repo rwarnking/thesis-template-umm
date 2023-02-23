@@ -41,6 +41,9 @@
 
 \begin{document}
 
+\pagenumbering{gobble}%
+\pagestyle{plain}%
+
 \input{chapters/#1-titlepage}
 \cleardoublepage
 
@@ -48,32 +51,29 @@
 \cleardoublepage
 
 \startTextChapters
-
 \printglossaries
-\clearpage
-
-\input{chapters/01-intro}
-\clearpage
-\input{chapters/02-chapter2}
-\clearpage
-\input{chapters/03-results}
-\clearpage
-\input{chapters/04-discussion}
-\clearpage
-\input{chapters/05-summary}
-\clearpage
-
 \cleardoublepage
+\input{chapters/01-intro}
+\cleardoublepage
+\input{chapters/02-chapter2}
+\cleardoublepage
+\input{chapters/03-results}
+\cleardoublepage
+\input{chapters/04-discussion}
+\cleardoublepage
+\input{chapters/05-summary}
+\cleardoublepage
+
 % unnumbered in table of contents
 % \printbibliography[heading=bibintoc]
 % numbered in table of contents
 \printbibliography[heading=bibnumbered]
-
+\cleardoublepage
 \input{chapters/xx-appendix}
-\clearpage
+\cleardoublepage
 \input{chapters/xy-cv}
-\clearpage
+\cleardoublepage
 \input{chapters/xz-acknowledgement}
-\clearpage
+\cleardoublepage
 
 \end{document}

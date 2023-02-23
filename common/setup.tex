@@ -27,12 +27,69 @@
 \renewcommand{\sectionmark}[1]{\markboth{#1}{}}
 
 % ----------------------------------------
+% Chapter title design
+% ----------------------------------------
+
+\titleformat{\section}{\Large}{\thesection}{1em}{}
+\titleformat{\subsection}{\large}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont}{\thesubsubsection}{1em}{}
+
+% ----------------------------------------
 % Table of contents design
 % ----------------------------------------
 \usepackage{tocloft}
-\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}} % for parts
-\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % for chapters
-\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections, if you really want! (It is default in report and book class (So you may not need it).
+
+% \makeatletter 
+% \newcommand\cuslarge{\@setfontsize\cuslarge\@xxpt{13}}
+% \makeatother
+
+% Centering the table of contents title and make it uppercase
+\renewcommand{\cfttoctitlefont}{\null\vspace{0.5cm}\hfill\fontsize{14.65pt}{14.65pt}\selectfont\MakeUppercase}
+
+% Add page column title
+\renewcommand{\cftaftertoctitle}{%
+    % Note the second \hfill, it could have been any dummy text
+    \hfill\hfill
+    \\[1cm] \null\hfill
+    \ifthenelse{\value{sprache} = 1}{%
+        Seite%
+    }{%
+        Page%
+    }
+}
+
+% https://tex.stackexchange.com/questions/13438/
+ % For dotted sections in toc (It is default in report and book class).
+\renewcommand{\cftsecleader}{\cftdotfill{\cftsecdotsep}}
+% Increase dot density
+\renewcommand\cftsecdotsep{\cftdot}
+\renewcommand\cftsubsecdotsep{\cftdot}
+\renewcommand\cftsubsubsecdotsep{\cftdot}
+
+% Chapter and section spacing
+\setlength{\cftbeforesecskip}{30pt}
+\setlength{\cftbeforesubsecskip}{3pt}
+\setlength{\cftbeforesubsubsecskip}{3pt}
+\renewcommand\cftsecafterpnum{\vskip10pt}
+\renewcommand\cftsubsecafterpnum{\vskip3pt}
+\renewcommand\cftsubsubsecafterpnum{\vskip3pt}
+
+% Change font size
+% \renewcommand\cftchapfont{\large\bfseries}
+\renewcommand\cftsecfont{\large}
+\renewcommand\cftsubsecfont{\large}
+\renewcommand\cftsubsubsecfont{\large}
+
+% \renewcommand\cftchappagefont{\large\bfseries}
+\renewcommand\cftsecpagefont{\large}
+\renewcommand\cftsubsecpagefont{\large}
+\renewcommand\cftsubsubsecpagefont{\large}
+
+% ----------------------------------------
+% Footnote design
+% ----------------------------------------
+% Remove indent in footnote
+\usepackage[hang, flushmargin]{footmisc}
 
 % ----------------------------------------
 % Hyperref setup

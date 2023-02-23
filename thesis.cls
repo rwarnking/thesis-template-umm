@@ -105,10 +105,6 @@
     % https://tex.stackexchange.com/questions/154554/renaming-acronyms-glossaries-package
     \renewcommand*{\acronymname}{Abkürzungsverzeichnis}
 }{}
-% Have seperate pages for glossary and acronym list
-\ifthenelse{\equal{\doctype}{article}}{
-    \renewcommand*{\glsclearpage}{\clearpage}
-}{}
 
 % For appendix
 \RequirePackage[page, toc]{appendix}
