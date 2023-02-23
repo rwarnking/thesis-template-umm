@@ -1,36 +1,60 @@
 % Hot to use title author and date on a custom title page
 % https://tex.stackexchange.com/questions/10130/
-\makeatletter
+\makeatletter%
+%
+\begin{titlepage}%
+    \pagenumbering{roman}%
+    \pagestyle{plain}%
+    \thispagestyle{empty}%
+    \begin{center}%
+        \null\vfill
+        
+        Aus der ..............................klinik (\bzw: Aus dem Institut für ................)\\
+        der Medizinischen Fakultät Mannheim\\
+        (Direktor: Prof. Dr. med. ........)
 
-\begin{titlepage}
+        \vspace*{6\baselineskip}
+        {\large\@title}%
+        \vspace*{6\baselineskip}%
 
-    \pagenumbering{roman}
-    \pagestyle{plain}
-    \thispagestyle{empty}
-    \begin{center}
+        Inauguraldissertation\\
+        zur Erlangung des medizinischen Doktorgrades\footnote{Bei Dissertationen zum Dr. sc. hum.: zur Erlangung des Doctor scientiarum humanarum (Dr. sc. hum.)}\\
+        der\\
+        Medizinischen Fakultät Mannheim\\
+        der Ruprecht-Karls-Universität\\
+        zu\\
+        Heidelberg%
         
-        \LARGE{\textsc{
-            \@institute \vspace{0.5cm}\\
-            \@titleinfoA \vspace{0.5cm}\\
-            \@titleinfoB
-        }}
-        \vfill
+        \vspace*{4\baselineskip}%
+        vorgelegt von:\\
+        \@author%
         
-        \huge{\textbf{\@title}}
-        \vspace{4mm}
-        
-        \normalsize{\textbf{\@subtitle}}
-        \vspace{8mm}
-    \end{center}
-    %
-    \vfill%
-    %
-    Vorgelegt von:\\
-    \@author\\
-    am \@submitdate\\
-    \@firstSupervisor
+        aus\\%
+        \@birthplace\\
+        \@submitdate%
+        %
+        \vfill%
+        \vfill%
+    \end{center}%
+
+    \clearpage
+
+    \pagestyle{plain}%
+    \thispagestyle{empty}%
     
-    \vfill%
+    \begin{center}
+        \topskip0pt
+        \vspace*{\fill}
+        \vspace*{\fill}
+        \vspace*{\fill}
+        \vspace*{\fill}
 
-\end{titlepage}
-\makeatother
+        Dekan: (Frau) Prof. Dr. med. .......\\
+        Referent(in): (Frau) Prof. med. / Priv. -Doz. Dr. med. ..................
+        \vspace*{\fill}
+        
+    \end{center}
+
+\end{titlepage}%
+\makeatother%
+%

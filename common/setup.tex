@@ -1,5 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Design settings
+% Arial, 12pt
+% Linebreak 1
+% page margin lr 2.5cm, tb 2.0cm
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Page margins
 \usepackage[left=2.5cm, right=2.5cm, top=2cm, bottom=2cm]{geometry}
@@ -21,7 +24,15 @@
 \usepackage{titlesec}
 
 % Remove number in header title 
-\renewcommand{\sectionmark}[1]{\markboth{#1}{}} 
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+
+% ----------------------------------------
+% Table of contents design
+% ----------------------------------------
+\usepackage{tocloft}
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}} % for parts
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % for chapters
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections, if you really want! (It is default in report and book class (So you may not need it).
 
 % ----------------------------------------
 % Hyperref setup
