@@ -1,38 +1,78 @@
-\section{Lebenslauf}
-
 {
 \def\arraystretch{2}
 
-\vspace*{1.5\baselineskip}%
+\ifthenelse{\value{doc_lang} = 1}{%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % German version
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \section{Lebenslauf}
+    \vspace*{1.5\baselineskip}%
 
-\subsection*{PERSONALIEN}
+    \subsection*{PERSONALIEN}
+    
+    \begin{tabularx}{\textwidth}{p{4cm} X}
+        Name und Vorname: & \dotfill \\
+        Geburtsdatum: & \dotfill \\
+        Geburtsort: & \dotfill
+    \end{tabularx}
+    
+    \vspace*{1.5\baselineskip}%
+    
+    \subsection*{SCHULISCHER WERDEGANG}
+    
+    \begin{tabularx}{\textwidth}{p{4cm} X}
+        (Jahr) -- (Jahr) & \dotfill \\
+        (genaues Datum) & Abitur
+    \end{tabularx}
+    
+    \vspace*{1.5\baselineskip}%
+    
+    \subsection*{UNIVERSITÄRER WERDEGANG}
+    
+    \begin{tabularx}{\textwidth}{p{4cm} X}
+        WS20 ../.. & \makecell[l]{Beginn des Studiums (Fach)\\ An der Universität .............................} \\
+        (genaues Datum) & \makecell[l]{Vordiplom, Bachelor, Erster Abschnitt der\\ Ärztlichen Prüfung (M1), \oae} \\
+        (genaues Datum) & 1. Abschnitt der Ärztlichen Prüfung \\
+        (Jahr) -- (Jahr) & \makecell[l]{Hauptstudium, Zweiter Abschnitt der\\ Ärztlichen Prüfung (M2), \oae} \\
+        (Jahr) -- (Jahr) & Diplom-/Masterarbeit (Titel) ..................... \\
+        (genaues Datum) & Diplom, Master, \oae, Note:
+    \end{tabularx}
+}{%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % English version
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \section{Curriculum Vitae}
+    \vspace*{1.5\baselineskip}%
 
-\begin{tabularx}{\textwidth}{p{4cm} X}
-    Name und Vorname: & \dotfill \\
-    Geburtsdatum: & \dotfill \\
-    Geburtsort: & \dotfill
-\end{tabularx}
-
-\vspace*{1.5\baselineskip}%
-
-\subsection*{SCHULISCHER WERDEGANG}
-
-\begin{tabularx}{\textwidth}{p{4cm} X}
-    (Jahr) -- (Jahr) & \dotfill \\
-    (genaues Datum) & Abitur
-\end{tabularx}
-
-\vspace*{1.5\baselineskip}%
-
-\subsection*{UNIVERSITÄRER WERDEGANG}
-
-\begin{tabularx}{\textwidth}{p{4cm} X}
-    WS20 ../.. & \makecell[l]{Beginn des Studiums (Fach)\\ An der Universität .............................} \\
-    (genaues Datum) & \makecell[l]{Vordiplom, Bachelor, Erster Abschnitt der\\ Ärztlichen Prüfung (M1), \oae} \\
-    (genaues Datum) & 1. Abschnitt der Ärztlichen Prüfung \\
-    (Jahr) -- (Jahr) & \makecell[l]{Hauptstudium, Zweiter Abschnitt der\\ Ärztlichen Prüfung (M2), \oae} \\
-    (Jahr) -- (Jahr) & Diplim-/Masterarbeit (Titel) ..................... \\
-    (genaues Datum) & Diplom, Master, \oae, Note:
-\end{tabularx}
+    \subsection*{PERSONAL DETAILS}
+    
+    \begin{tabularx}{\textwidth}{p{4cm} X}
+        Last- and Surname: & \dotfill \\
+        Birthdate: & \dotfill \\
+        Birthplace: & \dotfill
+    \end{tabularx}
+    
+    \vspace*{1.5\baselineskip}%
+    
+    \subsection*{SCHOOL EDUCATION}
+    
+    \begin{tabularx}{\textwidth}{p{4cm} X}
+        (Year) -- (Year) & \dotfill \\
+        (precice Date) & A-Levels
+    \end{tabularx}
+    
+    \vspace*{1.5\baselineskip}%
+    
+    \subsection*{UNIVERSITY EDUCATION}
+    
+    \begin{tabularx}{\textwidth}{p{4cm} X}
+        WS20 ../.. & \makecell[l]{Studybegin (Subject)\\ At the university of .............................} \\
+        (precice Date) & \makecell[l]{Prediploma, Bachelors, \ortl} \\
+        (precice Date) & First Part of medical Exam (M1)\\
+        (Year) -- (Year) & \makecell[l]{Mainstudy, Secound Part of medical Exam (M2), \ortl} \\
+        (Year) -- (Year) & Diploma/Masterthesis (Title) ..................... \\
+        (precice Date) & Diploma, Masters, \ortl, Grade:
+    \end{tabularx}
+}
 
 }

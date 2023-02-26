@@ -32,12 +32,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Setup class options
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcounter{sprache}
+\newcounter{doc_lang}
 \DeclareOption{german}{
-    \setcounter{sprache}{1}
+    \setcounter{doc_lang}{1}
 }
 \DeclareOption{english}{
-    \setcounter{sprache}{2}
+    \setcounter{doc_lang}{2}
 }
 
 \newcounter{font}
@@ -54,7 +54,7 @@
 % Default packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{ifthen}
-\ifthenelse{\value{sprache} = 1}{
+\ifthenelse{\value{doc_lang} = 1}{
     \RequirePackage[ngerman]{babel}
     \RequirePackage[T1]{fontenc}
 }{
@@ -103,7 +103,7 @@
 % https://www.dickimaw-books.com/gallery/glossaries-styles/
 % TODO acronym list is not styled
 \RequirePackage[translate=babel, acronym, toc, nopostdot, style=super3colheader]{glossaries}
-\ifthenelse{\value{sprache} = 1}{
+\ifthenelse{\value{doc_lang} = 1}{
     % https://tex.stackexchange.com/questions/154554/renaming-acronyms-glossaries-package
     \renewcommand*{\acronymname}{Abkürzungsverzeichnis}
 }{}
@@ -161,7 +161,7 @@
 }
 
 % Adjust page numbering
-\newcommand{\startTextChapters}{
-  \pagestyle{fancy}
-  \pagenumbering{arabic}
-}
+% \newcommand{\enableTextChapters}{
+%   \pagestyle{fancy}
+%   \pagenumbering{arabic}
+% }
