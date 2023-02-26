@@ -4,33 +4,32 @@
 %
 \begin{titlepage}%
     \thispagestyle{empty}%
+
+\ifthenelse{\value{doc_lang} = 1}{%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % German version
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{center}%
         \null\vfill
-        
-        Aus der ..............................klinik (\bzw: Aus dem Institut für ................)\\
-        der Medizinischen Fakultät Mannheim\\
-        (Direktor: Prof.\ Dr.\ med.\ ........)
+
+        Aus der \@clinic{} (\bzw: Aus dem \@institute{})\\
+        der \@faculty{}\\
+        (Direktor: \@director{})
 
         \vspace*{6\baselineskip}
-        {\large\@title}%
+        {\large\@title{}}%
         \vspace*{6\baselineskip}%
 
-        Inauguraldissertation\\
-        zur Erlangung des medizinischen Doktorgrades\footnote{Bei Dissertationen zum Dr. sc. hum.: zur Erlangung des Doctor scientiarum humanarum (Dr.\ sc.\ hum.)}\\
-        der\\
-        Medizinischen Fakultät Mannheim\\
-        der Ruprecht-Karls-Universität\\
-        zu\\
-        Heidelberg%
+        \@thesisType{}%
         
         \vspace*{4\baselineskip}%
         vorgelegt von:\\
-        \@author%
+        \@author{}%
         
         \vspace*{\baselineskip}%
         aus\\%
-        \@birthplace\\
-        \@submitdate%
+        \@birthplace{}\\
+        \@thesisSumbit{}%
         %
         \vfill%
         \vfill%
@@ -48,11 +47,59 @@
         \vspace*{\fill}
         \vspace*{\fill}
 
-        Dekan: (Frau) Prof.\ Dr.\ med.\ .......\\
-        Referent(in): (Frau) Prof.\ med.\ / Priv.\ -Doz.\ Dr.\ med.\ ..................
+        Dekan: \@deanOfInstitution{} \\
+        Referent(in): \@theSpeaker{}
         \vspace*{\fill}
         
     \end{center}
+}{%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % English version
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{center}%
+        \null\vfill
+
+        From the \@clinic{} (\bzw: From the \@institute{})\\
+        of the \@faculty{}\\
+        (Director: \@director{})
+
+        \vspace*{6\baselineskip}
+        {\large\@title{}}%
+        \vspace*{6\baselineskip}%
+
+        \@thesisType{}%
+        
+        \vspace*{4\baselineskip}%
+        submitted by:\\
+        \@author{}%
+        
+        \vspace*{\baselineskip}%
+        from\\%
+        \@birthplace{}\\
+        \@thesisSumbit{}%
+        %
+        \vfill%
+        \vfill%
+    \end{center}%
+
+    \clearpage
+
+    \pagestyle{plain}%
+    \thispagestyle{empty}%
+    
+    \begin{center}
+        \topskip0pt
+        \vspace*{\fill}
+        \vspace*{\fill}
+        \vspace*{\fill}
+        \vspace*{\fill}
+
+        Dean: \@deanOfInstitution{} \\
+        Speaker: \@theSpeaker{}
+        \vspace*{\fill}
+        
+    \end{center}
+}
 
 \end{titlepage}%
 \makeatother%

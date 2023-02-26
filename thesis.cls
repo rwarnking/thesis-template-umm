@@ -133,19 +133,70 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Meta information commands
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\subtitle#1{\gdef\@subtitle{#1}}
-\def\email#1{\gdef\@email{#1}}
+\def\institute#1{\gdef\@institute{#1}}
+\def\clinic#1{\gdef\@clinic{#1}}
+\def\faculty#1{\gdef\@faculty{#1}}
+\def\director#1{\gdef\@director{#1}}
+
+\def\thesisType#1{\gdef\@thesisType{#1}}
+\def\thesisSumbit#1{\gdef\@thesisSumbit{#1}}
+
 \def\birthplace#1{\gdef\@birthplace{#1}}
 
-\def\type#1{\gdef\@type{#1}}
-\def\submitdate#1{\gdef\@submitdate{#1}}
-\def\signcity#1{\gdef\@signcity{#1}}
+\def\theSpeaker#1{\gdef\@theSpeaker{#1}}
+\def\deanOfInstitution#1{\gdef\@deanOfInstitution{#1}}
 
-\def\institute#1{\gdef\@institute{#1}}
-\def\titleinfoA#1{\gdef\@titleinfoA{#1}}
-\def\titleinfoB#1{\gdef\@titleinfoB{#1}}
-\def\firstSupervisor#1{\gdef\@firstSupervisor{#1}}
-\def\secondSupervisor#1{\gdef\@secondSupervisor{#1}}
+% Language dependend default values
+\ifthenelse{\value{doc_lang} = 1}{
+    \clinic{..............................klinik}
+    \institute{Institut für ................}
+    \faculty{Medizinischen Fakultät Mannheim}
+    \director{\prof{} Dr.\ med.\ ........}
+    
+    \title{Über die Problematik, eine Dissertationsschrift abzufassen,\\ ohne formal Fehler zu begehen.}
+    \thesisType{%
+        Inauguraldissertation\\ 
+        zur Erlangung des medizinischen Doktorgrades
+        \footnote{Bei Dissertationen zum \drschum{}: zur Erlangung des Doctor scientiarum humanarum (\drschum{})}\\
+        der\\
+        Medizinischen Fakultät Mannheim\\
+        der Ruprecht-Karls-Universität\\
+        zu\\
+        Heidelberg%
+    }
+    \thesisSumbit{[22. Februar 2022]}
+    
+    \author{[Vor- und Nachname]}
+    \birthplace{[Geburtsort]}
+    
+    \theSpeaker{(Frau) \prof{}/ \privdoz{}\drmed{} ..................}
+    \deanOfInstitution{(Frau) \prof{}\drmed{} .......}
+}{
+    % English default values
+    \clinic{..............................clinic}
+    \institute{Institute for ................}
+    \faculty{Medical Faculty Mannheim}
+    \director{\prof ........ \mdoc{}}
+    
+    \title{Regarding the Problems,\\ of drafting a dissertation without formal mistakes.}
+    \thesisType{%
+        Inaugural dissertation\\ 
+        for the attaintment of a medical doctordegree
+        \footnote{Used for dissertations to attaint the Doctor scientiarum humanarum (\drschum{})}\\
+        of the\\
+        Medical Faculty Mannheim\\
+        at the Ruprecht-Karls-Universität\\
+        of\\
+        Heidelberg%
+    }
+    \thesisSumbit{[22 February 2022]}
+    
+    \author{[Sur- and Lastname]}
+    \birthplace{[Birthplace]}
+    
+    \theSpeaker{(Mrs.) \prof{}/ \privlec{}..................\mdoc{}}
+    \deanOfInstitution{(Mrs.) \prof{}.......\mdoc{}}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Create style commands
